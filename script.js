@@ -40,27 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navbar toggle for mobile
-    document.addEventListener('DOMContentLoaded', function(){
-        const menuBtnIcon = document.querySelector('.menu-btn i');
-        document.querySelector('.menu-btn').addEventListener('click', function(){
-            document.querySelector('.navbar .menu').classList.toggle('active');
-            if (menuBtnIcon) {
-                menuBtnIcon.classList.toggle('active');
-            }
-        });
-
-        // Close menu when a menu item is clicked
-        document.querySelectorAll('.navbar .menu li a').forEach(link => {
-            link.addEventListener('click', function(){
-                document.querySelector('.navbar .menu').classList.remove('active');
-                if (menuBtnIcon) {
-                    menuBtnIcon.classList.remove('active');
-                }
-            });
-        });
-    });
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
