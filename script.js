@@ -1,4 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Debug function to log element existence
+    function logElementExists(selector) {
+        const element = document.querySelector(selector);
+        console.log(`Element ${selector} exists:`, !!element);
+        return element;
+    }
+
+    // Navigation Toggle Functionality
+    function setupNavigationToggle() {
+        const navToggle = logElementExists('.nav-toggle');
+        const navMenu = logElementExists('.nav-menu');
+
+        if (!navToggle || !navMenu) {
+            console.error('Navigation elements not found. Check your HTML.');
+            return;
+        }
+
+        // Add click event to toggle button
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling
+            console.log('Navigation toggle clicked');
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Close menu when a menu item is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Navigation menu link clicked');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Call the setup function
+    setupNavigationToggle();
+
     // Typing animation
     const typed = new Typed(".typing", {
         strings: ["Developer", "Designer", "Freelancer"],
