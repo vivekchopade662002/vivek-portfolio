@@ -603,10 +603,14 @@ body {
         padding-top: 80px;
         transition: all 0.3s ease;
         z-index: 998;
+        opacity: 0;
+        visibility: hidden;
     }
     
     .navbar .menu.active {
         left: 0;
+        opacity: 1;
+        visibility: visible;
     }
     
     .navbar .menu li {
@@ -617,6 +621,12 @@ body {
     .navbar .menu li a {
         font-size: 1.5rem;
         color: var(--text-white);
+        display: inline-block;
+        transition: color 0.3s ease;
+    }
+
+    .navbar .menu li a:hover {
+        color: var(--primary-purple);
     }
 
     .menu-btn {
@@ -1418,8 +1428,6 @@ footer span a:hover {
         display: block;
     }
     .navbar .menu li a {
-        display: inline-block;
-        margin: 20px 0;
         font-size: 25px;
     }
     .home .home-content .text-2 {
@@ -1588,10 +1596,15 @@ footer span a:hover {
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .navbar .menu.active {
         left: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .navbar .menu li {
@@ -1599,24 +1612,27 @@ footer span a:hover {
     }
 
     .navbar .menu li a {
-        display: inline-block;
-        margin: 20px 0;
         font-size: 1.5rem;
         color: var(--text-white);
+        display: inline-block;
+        transition: color 0.3s ease;
     }
 
-    .title {
-        font-size: 2rem;
-        margin-bottom: 30px;
+    .navbar .menu li a:hover {
+        color: var(--primary-purple);
     }
 
-    section .title::before {
-        width: 150px;
+    .menu-btn {
+        display: block;
+        z-index: 999;
+        position: fixed;
+        right: 30px;
+        top: 20px;
     }
 
-    section .title::after {
-        bottom: -12px;
-        font-size: 1rem;
+    .menu-btn i {
+        color: var(--text-white);
+        font-size: 30px;
     }
 }
 
@@ -1796,10 +1812,14 @@ section {
         padding-top: 80px;
         transition: all 0.3s ease;
         z-index: 998;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .navbar .menu.active {
         left: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .navbar .menu li {
@@ -1810,6 +1830,12 @@ section {
     .navbar .menu li a {
         font-size: 1.5rem;
         color: var(--text-white);
+        display: inline-block;
+        transition: color 0.3s ease;
+    }
+
+    .navbar .menu li a:hover {
+        color: var(--primary-purple);
     }
 
     .menu-btn {
